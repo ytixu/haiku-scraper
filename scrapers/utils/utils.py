@@ -29,6 +29,19 @@ def clean(line):
 
 	return u' \\ '.join(lines)
 
+def filter_and_break_lines(text):
+	lines = re.findall(u'.+\n.+\n.+', text)
+	if len(lines) > 0:
+		lines = re.sub('RT @[0-9a-zA-Z_]+: ', '', lines[0]).split(u'\n')
+		lines = [l.strip() for l in lines]
+		lines = u'\n'.join([clean_char(l) for l in lines if u'#' not in l and u'@' not in l])
+	if len(lines) != 3:
+		return ''
+
+	print u' \\ '.join(lines)
+
+
+
 def break_lines(line):
 	lines = line.split(u'/')
 	lines = [clean_char(l).strip() for l in lines]

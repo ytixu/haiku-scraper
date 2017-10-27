@@ -6,6 +6,7 @@ import daily_haiku_org
 import the_herons_nest
 import temps_libres
 import reddit_haiku
+import twitter_haiku
 
 def scrape_and_save(scraper_class):
 	print 'Scraping', scraper_class.NAME
@@ -29,4 +30,5 @@ if __name__ == '__main__':
 	# scrape_and_save(daily_haiku_org)
 	# scrape_and_save(the_herons_nest)
 	# scrape_and_save(temps_libres)
-	scrape_and_save(reddit_haiku)
+	# scrape_and_save(reddit_haiku)
+	scrape_and_save(twitter_haiku)

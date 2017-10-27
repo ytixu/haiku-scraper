@@ -10,12 +10,13 @@ SUBREDDIT = 'haiku'
 NAME = 'reddit_haiku'
 
 def scrape():
-	import praw
 	reddit = praw.Reddit(user_agent='Haiku-Scraper',
 						client_id=utils.oauth.REDDIT_CLIENT_ID, 
 						client_secret=utils.oauth.REDDIT_CLIENT_SECRET)
 	skipped = []
 
+															# https://www.epochconverter.com/
+															# 2000 Jan 1 00:00:00
 	for submission in reddit.subreddit(SUBREDDIT).submissions(946684800, int(time.time())):
 		haiku = break_lines(submission.title)
 
@@ -23,7 +24,7 @@ def scrape():
 			try:
 				if detect(haiku) == 'en':
 					yield [haiku]
-					
+
 			except LangDetectException:
 				pass
 

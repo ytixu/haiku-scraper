@@ -1,5 +1,13 @@
 # haiku-scraper
 
+### Dependencies:
+
+##### PRAW: Reddit API
+
+http://praw.readthedocs.io/en/latest/index.html
+
+
+
 #### Daily Haiku
 http://www.dailyhaiku.org/
 3633 haikus
@@ -16,9 +24,11 @@ http://www.tempslibres.org/tl/tlphp/dblang.php?lg=e
 https://www.reddit.com/r/haiku/
 6151 haikus
 
-#### Reddit haiku battle
-https://www.reddit.com/r/haikubattle/
-
 #### Mikhaemoji
 https://mikhaemoji.wordpress.com/2016/06/08/haiku-corpus-1/
 12 haikus
+
+
+
+##### Reddit haiku battle
+https://www.reddit.com/r/haikubattle/

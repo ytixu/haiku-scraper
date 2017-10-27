@@ -1,1 +1,3 @@
 scrapers/utils/oauth.py
+*.pyc
+*/*.pyc
