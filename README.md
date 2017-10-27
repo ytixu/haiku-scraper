@@ -10,10 +10,11 @@ http://www.theheronsnest.com/
 
 #### Temps Libres
 http://www.tempslibres.org/tl/tlphp/dblang.php?lg=e
-5182 English haikus
+5182 haikus
 
 #### Reddit haiku
 https://www.reddit.com/r/haiku/
+6151 haikus
 
 #### Reddit haiku battle
 https://www.reddit.com/r/haikubattle/

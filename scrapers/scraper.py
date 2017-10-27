@@ -5,6 +5,7 @@ from utils.utils import filter_haikus
 import daily_haiku_org
 import the_herons_nest
 import temps_libres
+import reddit_haiku
 
 def scrape_and_save(scraper_class):
 	print 'Scraping', scraper_class.NAME
@@ -27,4 +28,5 @@ def scrape_and_save(scraper_class):
 if __name__ == '__main__':
 	# scrape_and_save(daily_haiku_org)
 	# scrape_and_save(the_herons_nest)
-	scrape_and_save(temps_libres)
+	# scrape_and_save(temps_libres)
+	scrape_and_save(reddit_haiku)

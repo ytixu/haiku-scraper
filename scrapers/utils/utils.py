@@ -13,16 +13,28 @@ def replace_with_newlines(element):
 			text += '\n'
 	return text
 
+def clean_char(line):
+	# line = line.lower()
+	line = re.sub('&nbsp', u' ', line)
+	line = re.sub(u'[^0-9a-zA-Z\n\.\' \-\,]+', u' ', line)
+	return re.sub(u' {2,}', u' ', line)
+
 def clean(line):
 	line = replace_with_newlines(line)
 	# line = line.get_text()
-	line = re.sub('&nbsp', u' ', line)
-	line = re.sub(u'[^0-9a-zA-Z\n\.\' \-]+', u' ', line)
-	line = re.sub(u' {2,}', u' ', line)
+	line = clean_char(line)
 	lines = [l.strip() for l in line.split('\n') if len(l) > 0]
 	if len(lines) < 3:
 		return ''
 
+	return u' \\ '.join(lines)
+
+def break_lines(line):
+	lines = line.split(u'/')
+	lines = [clean_char(l).strip() for l in lines]
+
+	if len(lines) != 3:
+		return ''
 	return u' \\ '.join(lines)
 
 def filter_haikus(haiku):
