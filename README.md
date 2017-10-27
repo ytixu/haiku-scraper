@@ -2,8 +2,7 @@
 
 #### Daily Haiku
 http://www.dailyhaiku.org/
-3643 haikus
-
+3633 haikus
 
 #### The Heron's Nest
 http://www.theheronsnest.com/
@@ -11,4 +10,14 @@ http://www.theheronsnest.com/
 
 #### Temps Libres
 http://www.tempslibres.org/tl/tlphp/dblang.php?lg=e
-4908 English haikus
+5182 English haikus
+
+#### Reddit haiku
+https://www.reddit.com/r/haiku/
+
+#### Reddit haiku battle
+https://www.reddit.com/r/haikubattle/
+
+#### Mikhaemoji
+https://mikhaemoji.wordpress.com/2016/06/08/haiku-corpus-1/
+12 haikus

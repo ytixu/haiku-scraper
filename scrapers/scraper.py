@@ -25,6 +25,6 @@ def scrape_and_save(scraper_class):
 	print ' Done'
 
 if __name__ == '__main__':
-	scrape_and_save(daily_haiku_org)
-	scrape_and_save(the_herons_nest)
+	# scrape_and_save(daily_haiku_org)
+	# scrape_and_save(the_herons_nest)
 	scrape_and_save(temps_libres)

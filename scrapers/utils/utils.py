@@ -19,8 +19,11 @@ def clean(line):
 	line = re.sub('&nbsp', u' ', line)
 	line = re.sub(u'[^0-9a-zA-Z\n\.\' \-]+', u' ', line)
 	line = re.sub(u' {2,}', u' ', line)
+	lines = [l.strip() for l in line.split('\n') if len(l) > 0]
+	if len(lines) < 3:
+		return ''
 
-	return u' \\ '.join([l.strip() for l in line.split('\n') if len(l) > 0])
+	return u' \\ '.join(lines)
 
 def filter_haikus(haiku):
 	if len(haiku) < 3:
