@@ -6,4 +6,9 @@ http://www.dailyhaiku.org/
 
 
 #### The Heron's Nest
+http://www.theheronsnest.com/
 9267 haikus
+
+#### Temps Libres
+http://www.tempslibres.org/tl/tlphp/dblang.php?lg=e
+4908 English haikus
