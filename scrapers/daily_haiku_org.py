@@ -12,7 +12,7 @@ def scrape():
 		page_ind += 1
 		soup = bs4.BeautifulSoup(response.text, "lxml")
 
-		haikus = [clean(h.get_text()) for h in soup.select('p.haiku')]
+		haikus = [clean(h) for h in soup.select('p.haiku')]
 		if len(haikus) == 0:
 			raise StopIteration
 
