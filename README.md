@@ -2,10 +2,13 @@
 
 ### Dependencies:
 
-##### PRAW: Reddit API
+##### PRAW: Reddit API wrapper
 http://praw.readthedocs.io/en/latest/index.html
 
+##### python-twitter: Twitter API wrapper
+https://github.com/bear/python-twitter
 
+### DATA
 
 #### Daily Haiku
 http://www.dailyhaiku.org/
