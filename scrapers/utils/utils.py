@@ -1,6 +1,7 @@
 import re
 import types
-from bs4 import BeautifulSoup, Comment
+	
+special_chars = '''!"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ '''
 
 def replace_with_newlines(element):
 	text = ''
@@ -15,6 +16,7 @@ def replace_with_newlines(element):
 
 def clean_char(line):
 	# line = line.lower()
+	line = line.replace(u'\xe2', u'\'').replace(u'\u0027', u'\'').replace(u'\u2019', u'\'')
 	line = re.sub('&nbsp', u' ', line)
 	line = re.sub(u'[^0-9a-zA-Z\n\.\' \-\,]+', u' ', line)
 	return re.sub(u' {2,}', u' ', line)
@@ -29,17 +31,35 @@ def clean(line):
 
 	return u' \\ '.join(lines)
 
+def special_char_ratio(text):
+	if len(text) > 0:
+		found_chars = [c for c in text if c in special_chars]
+		counted_chars = len(found_chars)
+		return counted_chars * 1.0 / len(text)
+
+	return 0
+
+def filter_special_char_line(text):
+	return special_char_ratio(text) < 0.3
+
+def filter_tweet(text):
+	return '\n'.join([l for l in text.split('\n') 
+			if u'#' not in l 
+				and u'https:' not in l
+				and u'http:' not in l
+				and u'@' not in l 
+				and filter_special_char_line(l)])
+
 def filter_and_break_lines(text):
-	lines = re.findall(u'.+\n.+\n.+', text)
-	if len(lines) > 0:
-		lines = re.sub('RT @[0-9a-zA-Z_]+: ', '', lines[0]).split(u'\n')
-		lines = [l.strip() for l in lines]
-		lines = u'\n'.join([clean_char(l) for l in lines if u'#' not in l and u'@' not in l])
+	lines = filter_tweet(text)
+	lines = re.findall(u'(?=.*[a-zA-Z]).+\n(?=.*[a-zA-Z]).+\n(?=.*[a-zA-Z]).+', lines)
+	if len(lines) == 1:
+		lines = [clean_char(l).strip() for l in lines[0].split('\n')]
+
 	if len(lines) != 3:
 		return ''
-
-	print u' \\ '.join(lines)
-
+	
+	return u' \\ '.join(lines)
 
 
 def break_lines(line):

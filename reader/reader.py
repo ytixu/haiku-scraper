@@ -8,4 +8,4 @@ def read(filename):
 
 
 if __name__ == '__main__':
-	read('daily_haiku')
+	read('twitter_haiku')
