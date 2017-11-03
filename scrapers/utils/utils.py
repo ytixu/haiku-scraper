@@ -1,6 +1,7 @@
 import re
 import types
-	
+from bs4 import Comment
+
 special_chars = '''!"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ '''
 
 def replace_with_newlines(element):
@@ -43,11 +44,11 @@ def filter_special_char_line(text):
 	return special_char_ratio(text) < 0.3
 
 def filter_tweet(text):
-	return '\n'.join([l for l in text.split('\n') 
-			if u'#' not in l 
+	return '\n'.join([l for l in text.split('\n')
+			if u'#' not in l
 				and u'https:' not in l
 				and u'http:' not in l
-				and u'@' not in l 
+				and u'@' not in l
 				and filter_special_char_line(l)])
 
 def filter_and_break_lines(text):
@@ -58,7 +59,7 @@ def filter_and_break_lines(text):
 
 	if len(lines) != 3:
 		return ''
-	
+
 	return u' \\ '.join(lines)
 
 
@@ -71,7 +72,7 @@ def break_lines(line):
 	return u' \\ '.join(lines)
 
 def filter_haikus(haiku):
-	if len(haiku) < 3:
+	if len(haiku.split('\\')) != 3:
 		return False
 
 	return True

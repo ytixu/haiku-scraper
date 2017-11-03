@@ -20,15 +20,17 @@ def scrape_and_save(scraper_class):
 			for haiku in haikus:
 				if filter_haikus(haiku):
 					spamwriter.writerow([haiku.encode('utf-8')])
-			
+
 			sys.stdout.write("\r%d" % count)
 			sys.stdout.flush()
 
 	print ' Done'
 
+# run from root folder, not form scrapers folder!
 if __name__ == '__main__':
-	# scrape_and_save(daily_haiku_org)
+	scrape_and_save(daily_haiku_org)
 	# scrape_and_save(the_herons_nest)
 	# scrape_and_save(temps_libres)
 	# scrape_and_save(reddit_haiku)
-	scrape_and_save(twitter_haiku)
+	# scrape_and_save(twitter_haiku)
+	# pass
