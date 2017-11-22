@@ -1,3 +1,5 @@
 scrapers/utils/oauth.py
 *.pyc
-*/*.pyc
+*/*.p.yc
+/corpora/*
+stat-res-plots.ods

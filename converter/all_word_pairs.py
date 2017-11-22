@@ -1,13 +1,17 @@
 from glob import glob
+import sys
 
 from utils import corpora, utils, conversion_statistics
 from reader.reader import read_lines
 
 NAME = 'all_words'
+# CORPORA = ['wordnet', 'glove_twitter_25', 'glove_twitter_50',  'glove_twitter_100', 'glove_twitter_200',
+# 		'glove_wiki_50', 'glove_wiki_100', 'glove_wiki_200', 'glove_wiki_300', 'glove_crawl_300']
 CORPORA = ['wordnet']
 
 def convert(corpus):
 	cst = conversion_statistics.statistics()
+	cst.print_header(['haiku corpus', 'dictionary'])
 
 	datafiles = glob('data/*.csv')
 	for filename in datafiles:
@@ -28,12 +32,18 @@ def convert(corpus):
 				topics[i] = corpora.get_topics(line_tokens, corpus)
 
 			combos = utils.make_combos(topics, lines)
-			cst.update(combos, topics, tokened_lines, tokens)
+			cst.update(combos, topics, tokened_lines, tokens, corpus)
 
 			yield combos
 
-		cst.print_stats(filename)
+		cst.print_stats([filename, corpus])
+		cst.reset()
 
 if __name__ == '__main__':
-	for pairs in convert():
-		print pairs
+	for corpus in CORPORA:
+		count = 1
+		for pairs in convert(corpus):
+			# print pairs
+			# sys.stdout.write("\r%d" % count)
+			# sys.stdout.flush()
+			count += 1
