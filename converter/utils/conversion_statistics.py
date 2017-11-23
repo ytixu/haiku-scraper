@@ -1,5 +1,6 @@
 import numpy as np
 import corpora
+import association
 
 class statistics:
 
@@ -18,13 +19,7 @@ class statistics:
 			n = len(filtered_tokened_lines[i])*1.0
 			self.unnormalized_word_topic_ratio_filtered += len(tps) / n
 
-		corpus_name = corpus.split('_')[0]
-		method = [func for name, func in corpora.__dict__.iteritems() if callable(func) and name.startswith('_'+corpus_name)][0]
-		for combo in pairs:
-			# NEED TO TEST WITH BOTH
-			score = np.average([method(combo[inds[0]][0], combo[inds[1]][0]) for inds in [(0,1),(1,2)]])
-			# score = method([combo[0][0], combo[1][0]], combo[2][0])
-			self.association_score += score
+		self.association_score += association.average_association(corpus, pairs)
 
 	def print_stats(self, message_list=[]):
 		print '\t'.join(message_list + map(str, [self.total_entries/self.total_haikus,
@@ -51,3 +46,20 @@ class statistics:
 		self.association_score = 0.0
 
 		self.lines_length = [0]*3
+
+class record:
+	def __init__(self):
+		self.reset()
+
+	def update(self, val):
+		self.val += val
+		self.total += 1
+
+	def print_stats(self, *messages):
+		print ' '.join(message), self.val / self.total
+
+	def reset(self):
+		self.val = 0.0
+		self.total = 0.0
+
+

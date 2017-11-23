@@ -16,8 +16,8 @@ GLOVE_FILES = ['./corpora/glove.twitter.27B/glove.twitter.27B.DIMd.txt',
 				'./corpora/glove.42B.300d.txt']
 
 def from_wordnet(token):
-	# return len(wn.synsets(token)) > 0
-	return token in ENGLISH_VOCAB
+	return len(wn.synsets(token)) > 0
+	# return token in ENGLISH_VOCAB
 
 def get_topics(tokens, corpus_name):
 	return [t for t in tokens if globals()['from_'+corpus_name](t)]
