@@ -13,7 +13,8 @@ GLOVE_FILE_IDX = 0
 GLOVE_FILE_DIM = 0
 GLOVE_FILES = ['./corpora/glove.twitter.27B/glove.twitter.27B.DIMd.txt',
 				'./corpora/glove.6B/glove.6B.DIMd.txt',
-				'./corpora/glove.42B.300d.txt']
+				'./corpora/glove.42B.300d.txt',
+				'./corpora/glove.haiku.50d.txt']
 
 def from_wordnet(token):
 	# return len(wn.synsets(token)) > 0
@@ -107,6 +108,9 @@ def from_glove_wiki_300(token):
 
 def from_glove_crawl_300(token):
 	return from_glove(token, 2)
+
+def from_glove_haiku_50(token):
+	return from_glove(token, 3)
 
 def _glove_sim_score(ta_list, tb):
 	global GLOVE_WORDS
