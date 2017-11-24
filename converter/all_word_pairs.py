@@ -7,7 +7,7 @@ from reader.reader import read_lines
 NAME = 'all_words'
 # CORPORA = ['wordnet', 'glove_twitter_25', 'glove_twitter_50',  'glove_twitter_100', 'glove_twitter_200',
 # 		'glove_wiki_50', 'glove_wiki_100', 'glove_wiki_200', 'glove_wiki_300', 'glove_crawl_300']
-CORPORA = ['glove_twitter_50','glove_wiki_50', 'glove_wiki_100']
+CORPORA = ['wordnet']
 
 def convert(corpus, data_file='data/*.csv', get_stats=True):
 	if get_stats:
@@ -47,7 +47,7 @@ if __name__ == '__main__':
 	for corpus in CORPORA:
 		count = 1
 		for pairs in convert(corpus):
-			# print pairs
+			print pairs
 			# sys.stdout.write("\r%d" % count)
 			# sys.stdout.flush()
 			count += 1

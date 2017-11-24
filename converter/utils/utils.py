@@ -8,6 +8,8 @@ import copy
 
 
 NLTK_STOPWORDS = set(stopwords.words('english'))
+NLTK_STOPWORDS.update(['\'', '\"', ',', '.', '-', '!', '?', ':', ';',
+	'\'s', '\'ll', '\'re', '\'d', '\'ve', '\'t'])
 
 def tokenize(line):
 	return word_tokenize(line)
@@ -21,7 +23,7 @@ def filter_punctuations(tokens):
 
 def parse(haiku):
 	haiku = haiku.lower()
-	lines = haiku.split('\\')
+	lines = haiku.split(' \\ ')
 	tokened_lines = [filter_punctuations(tokenize(l)) for l in lines]
 	return lines, tokened_lines, [filter_stopwords(l) for l in tokened_lines]
 

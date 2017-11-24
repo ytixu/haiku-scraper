@@ -3,6 +3,7 @@ import csv
 
 from utils.utils import flatten_and_encode
 import all_word_pairs
+import best_association_pairs
 
 def scrape_and_save(converter_class):
 	for corpus in converter_class.CORPORA:
@@ -23,4 +24,5 @@ def scrape_and_save(converter_class):
 		print ' Done'
 
 if __name__ == '__main__':
-	scrape_and_save(all_word_pairs)
+	# scrape_and_save(all_word_pairs)
+	scrape_and_save(best_association_pairs)

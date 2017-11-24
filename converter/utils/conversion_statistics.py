@@ -56,7 +56,7 @@ class record:
 		self.total += 1
 
 	def print_stats(self, *messages):
-		print ' '.join(message), self.val / self.total
+		print ' '.join(messages), self.val / self.total
 
 	def reset(self):
 		self.val = 0.0

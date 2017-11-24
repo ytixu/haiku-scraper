@@ -73,3 +73,24 @@ data/mikhaemoji.csv	glove_wiki_100	12.2	0.588134920635	0.947777777778	3.7	5.3	3.
 data/reddit_haiku.csv	glove_wiki_100	23.436770268	0.637814146119	0.987211357196	3.98010195691	5.44203256043	4.3052129584	7.17687875701
 data/temps_libres.csv	glove_wiki_100	8.79472140762	0.670161428485	0.940168371327	2.90263929619	3.81798631476	3.04946236559	2.00618949354
 data/twitter_haiku.csv	glove_wiki_100	18.4935064935	0.67774219077	0.979175900158	3.38169642857	4.70211038961	3.77272727273	5.56397552649
+
+
+
+
+
+
+Converting best_words with glove_twitter_25
+glove_twitter_25 data/daily_haiku.csv 0.785708239044
+glove_twitter_25 data/herons_nest.csv 0.777210611865
+glove_twitter_25 data/mikhaemoji.csv 0.77726878762
+glove_twitter_25 data/reddit_haiku.csv 0.805336160167
+glove_twitter_25 data/temps_libres.csv 0.801851847148
+glove_twitter_25 data/twitter_haiku.csv 0.807418696524
+
+Converting best_words with glove_twitter_25
+glove_twitter_25 data/daily_haiku.csv 0.747357329199
+glove_twitter_25 data/herons_nest.csv 0.738229744831
+glove_twitter_25 data/mikhaemoji.csv 0.738306434922
+glove_twitter_25 data/reddit_haiku.csv 0.771350024737
+glove_twitter_25 data/temps_libres.csv 0.767202544372
+glove_twitter_25 data/twitter_haiku.csv 0.7736687905
