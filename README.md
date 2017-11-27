@@ -37,6 +37,14 @@ https://twitter.com/search?q=%23haiku&src=typd&lang=en
 https://mikhaemoji.wordpress.com/2016/06/08/haiku-corpus-1/
 12 haikus
 
+#### Write a Haiku
+http://writeahaiku.com/
+37 haikus
+
+#### Modern Haiku
+http://www.modernhaiku.org/previousissue.html
+399 haikus
+
 ### Reformatting to word-line pairs
 
 #### All word pairs

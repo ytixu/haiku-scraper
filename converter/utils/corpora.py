@@ -41,6 +41,7 @@ def _wordnet_sim_score(ta, tb):
 
 
 # taken form the glove repo
+
 def from_glove(token, file_idx=None, dim=0):
 	global GLOVE_WORDS, GLOVE_FILE_IDX, GLOVE_FILES, GLOVE_FILE_DIM
 	if GLOVE_FILE_IDX != file_idx or GLOVE_FILE_DIM != dim:
@@ -82,6 +83,10 @@ def from_glove(token, file_idx=None, dim=0):
 	else:
 		return token in GLOVE_WORDS[1]
 
+def glove_random_word(n=1):
+	# assume all params are set
+	return np.random.choice(GLOVE_WORDS[1].keys(), n)
+
 def from_glove_twitter_25(token):
 	return from_glove(token, 0, 25)
 
@@ -112,16 +117,7 @@ def from_glove_crawl_300(token):
 def from_glove_haiku_50(token):
 	return from_glove(token, 3)
 
-def _glove_sim_score(ta_list, tb):
-	global GLOVE_WORDS
-	W, vocab, ivocab = GLOVE_WORDS
-
-	if tb not in vocab:
-		return 0
-
-	if type(ta_list) == type('s'):
-		ta_list = [ta_list]
-
+def _glove_vector(ta_list, W, vocab, ivocab):
 	for idx, term in enumerate(ta_list):
 		if term in vocab:
 			if idx == 0:
@@ -135,4 +131,39 @@ def _glove_sim_score(ta_list, tb):
 	d = (np.sum(vec_result ** 2,) ** (0.5))
 	vec_norm = (vec_result.T / d).T
 
+	return vec_norm
+
+def _glove_sim_score(ta_list, tb):
+	global GLOVE_WORDS
+	W, vocab, ivocab = GLOVE_WORDS
+
+	if type(ta_list) == type('s'):
+		ta_list = [ta_list]
+
+	if tb not in vocab:
+		return 0
+
+	vec_norm = _glove_vector(ta_list, W, vocab, ivocab)
 	return np.dot(W[vocab[tb]], vec_norm.T)
+
+def _glove_sim_ranks(ta_list, thr):
+	global GLOVE_WORDS
+	W, vocab, ivocab = GLOVE_WORDS
+	vec_norm = _glove_vector(ta_list, W, vocab, ivocab)
+	dist = np.dot(W, vec_norm.T)
+
+	for term in ta_list:
+		index = vocab[term]
+		dist[index] = -np.Inf
+
+	a = np.argsort(-dist)
+	max_idx, min_idx = 0, 0
+	thr_max, thr_min = thr
+	for i, x in enumerate(a):
+		if dist[x] > thr_max:
+			max_idx  = i+1
+		if dist[x] < thr_min:
+			min_idx = i-1
+			break
+
+	return [ivocab[x] for x in a[max_idx:min_idx]]
