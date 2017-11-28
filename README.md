@@ -69,7 +69,7 @@ Find words present in a corpus as topic words and get all combination of word-li
 Find words present in embedded word vector space and get first n best combination of word-line pairs according to the association score. (67855 entires)
 
 Mean and variance of the association score
-'''
+```
 glove_haiku_50 data/daily_haiku.csv 0.357280552368 0.0464979427598
 glove_haiku_50 data/herons_nest.csv 0.357637144935 0.0438426424914
 glove_haiku_50 data/hsa_haiku.csv 0.356566539173 0.0441245800523
@@ -79,4 +79,4 @@ glove_haiku_50 data/reddit_haiku.csv 0.383749767841 0.046844620716
 glove_haiku_50 data/temps_libres.csv 0.380035201266 0.046402419614
 glove_haiku_50 data/twitter_haiku.csv 0.39109512994 0.0488310002762
 glove_haiku_50 data/write_a_haiku.csv 0.39109512994 0.0488310002762
-''''
+```
