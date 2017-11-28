@@ -53,13 +53,16 @@ class record:
 
 	def update(self, val):
 		self.val += val
+		self.var += val**2
 		self.total += 1
 
 	def print_stats(self, *messages):
-		print ' '.join(messages), self.val / self.total
+		mu = self.val / self.total
+		print ' '.join(messages), mu, self.var / self.total - mu**2
 
 	def reset(self):
 		self.val = 0.0
+		self.var = 0.0
 		self.total = 0.0
 
 

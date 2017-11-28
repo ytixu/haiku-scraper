@@ -117,7 +117,7 @@ def from_glove_crawl_300(token):
 def from_glove_haiku_50(token):
 	return from_glove(token, 3)
 
-def _glove_vector(ta_list, W, vocab, ivocab):
+def __glove_vector(ta_list, W, vocab, ivocab):
 	for idx, term in enumerate(ta_list):
 		if term in vocab:
 			if idx == 0:
@@ -137,19 +137,19 @@ def _glove_sim_score(ta_list, tb):
 	global GLOVE_WORDS
 	W, vocab, ivocab = GLOVE_WORDS
 
-	if type(ta_list) == type('s'):
+	if type(ta_list) == type('s') or type(ta_list) == type(u's'):
 		ta_list = [ta_list]
 
 	if tb not in vocab:
 		return 0
 
-	vec_norm = _glove_vector(ta_list, W, vocab, ivocab)
+	vec_norm = __glove_vector(ta_list, W, vocab, ivocab)
 	return np.dot(W[vocab[tb]], vec_norm.T)
 
-def _glove_sim_ranks(ta_list, thr):
+def glove_sim_ranks(ta_list, thr):
 	global GLOVE_WORDS
 	W, vocab, ivocab = GLOVE_WORDS
-	vec_norm = _glove_vector(ta_list, W, vocab, ivocab)
+	vec_norm = __glove_vector(ta_list, W, vocab, ivocab)
 	dist = np.dot(W, vec_norm.T)
 
 	for term in ta_list:

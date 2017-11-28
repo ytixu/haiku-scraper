@@ -119,3 +119,14 @@ glove_wiki_100 data/reddit_haiku.csv 0.500282835357
 glove_wiki_100 data/temps_libres.csv 0.495523100368
 glove_wiki_100 data/twitter_haiku.csv 0.507794671145
  Done
+
+
+2637glove_haiku_50 data/daily_haiku.csv 0.357280552368 0.0464979427598
+10260glove_haiku_50 data/herons_nest.csv 0.357637144935 0.0438426424914
+10839glove_haiku_50 data/hsa_haiku.csv 0.356566539173 0.0441245800523
+10849glove_haiku_50 data/mikhaemoji.csv 0.3566718037 0.0441249742062
+11142glove_haiku_50 data/modern_haiku.csv 0.355237483642 0.0443131611342
+16189glove_haiku_50 data/reddit_haiku.csv 0.383749767841 0.046844620716
+20510glove_haiku_50 data/temps_libres.csv 0.380035201266 0.046402419614
+24256glove_haiku_50 data/twitter_haiku.csv 0.39109512994 0.0488310002762
+glove_haiku_50 data/write_a_haiku.csv 0.39109512994 0.0488310002762

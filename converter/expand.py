@@ -1,21 +1,22 @@
 import numpy as np
 from utils import corpora, utils
 
-CORPORA = {'glove_twitter_25': 0.8,
-			'glove_twitter_50':0.7,
-			'glove_wiki_50':0.6,
-			'glove_wiki_100':0.5,
-			'glove_haiku_50':0.6}
+CORPORA = {
+# 			'glove_twitter_25': 0.8,
+# 			'glove_twitter_50':0.7,
+# 			'glove_wiki_50':0.6,
+# 			'glove_wiki_100':0.5,
+			'glove_haiku_50':(0.36, 0.05)}
 
 def expand_topic(tp_list, thr):
-	topics = corpora._glove_sim_ranks(tp_list, thr)
+	topics = corpora.glove_sim_ranks(tp_list, thr)
 	topics = utils.filter_stopwords(topics)
 	return np.random.choice(topics, 1)[0]
 
 def expand(input_word, corpus):
 	topics = corpora.get_topics(input_word.lower().split(), corpus)
 	n = len(topics)
-	thr = (CORPORA[corpus]+0.1, CORPORA[corpus]-0.1)
+	thr = (CORPORA[corpus][0]+np.sqrt(CORPORA[corpus][1]), CORPORA[corpus][0]-np.sqrt(CORPORA[corpus][1]))
 	if n == 2:
 		w3 = expand_topic(topics, thr)
 		return topics + [w3]

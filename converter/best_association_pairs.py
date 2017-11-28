@@ -9,7 +9,8 @@ from all_word_pairs import convert as awp_convert
 NAME = 'best_words'
 # CORPORA = ['wordnet', 'glove_twitter_25', 'glove_twitter_50',  'glove_twitter_100', 'glove_twitter_200',
 # 		'glove_wiki_50', 'glove_wiki_100', 'glove_wiki_200', 'glove_wiki_300', 'glove_crawl_300', 'glove_haiku_50']
-CORPORA = [ 'glove_haiku_50']
+# CORPORA = ['glove_haiku_50', 'glove_twitter_25', 'glove_twitter_50', 'glove_wiki_50', 'glove_wiki_100']
+CORPORA = ['glove_haiku_50']
 
 def convert(corpus):
 	sr = conversion_statistics.record()
@@ -36,7 +37,7 @@ if __name__ == '__main__':
 	for corpus in CORPORA:
 		count = 1
 		for pairs in convert(corpus):
-			print pairs
-			# sys.stdout.write("\r%d" % count)
-			# sys.stdout.flush()
+			# print pairs
+			sys.stdout.write("\r%d" % count)
+			sys.stdout.flush()
 			count += 1

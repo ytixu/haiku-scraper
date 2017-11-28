@@ -45,6 +45,10 @@ http://writeahaiku.com/
 http://www.modernhaiku.org/previousissue.html
 399 haikus
 
+#### Haiku Society of America
+http://www.hsa-haiku.org/haikucollections.htm
+1064 haikus
+
 ### Reformatting to word-line pairs
 
 #### All word pairs
