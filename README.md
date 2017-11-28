@@ -62,6 +62,13 @@ In vector space, the two method are comparable, thus we can find best associatio
 #### Embedded vector space
 `corpora/glove.haiku.50d.txt` is trained using GloVe on the scraped haikus.
 
+Paramters:
+- window size: 7
+- minimum word frequency: 5
+- vector dimension: 50
+
+Output space has 5764 vectors.
+
 #### All word pairs
 Find words present in a corpus as topic words and get all combination of word-line pairs (ignoring repeated words between lines). (150095 entries)
 
