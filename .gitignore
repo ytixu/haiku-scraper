@@ -1,5 +1,7 @@
 scrapers/utils/oauth.py
 *.pyc
 */*.p.yc
-/corpora/*
+/corpora/glove.6*
+/corpora/glove.twitter*
+/corpora/glove.4*
 stat-res-plots.ods
