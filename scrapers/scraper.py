@@ -9,6 +9,7 @@ import reddit_haiku
 import twitter_haiku
 import modern_haiku
 import haiku_foundation
+import all_poetry_basho
 
 def scrape_and_save(scraper_class):
 	print 'Scraping', scraper_class.NAME
@@ -36,4 +37,6 @@ if __name__ == '__main__':
 	# scrape_and_save(reddit_haiku)
 	# scrape_and_save(twitter_haiku)
 	# scrape_and_save(modern_haiku)
-	scrape_and_save(haiku_foundation)
+	# scrape_and_save(haiku_foundation)
+	scrape_and_save(all_poetry_basho)
+

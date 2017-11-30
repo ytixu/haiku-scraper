@@ -35,15 +35,18 @@ def clean_char(line):
 	line = re.sub(u'[^0-9a-zA-Z\n\.\' \-\,]+', u' ', line)
 	return re.sub(u' {2,}', u' ', line)
 
-def clean(line):
-	line = replace_with_newlines(line)
-	# line = line.get_text()
+def format(line):
 	line = clean_char(line)
-	lines = [l.strip() for l in line.split('\n') if len(l) > 0]
+	lines = [l.strip() for l in line.split('\n') if len(l.strip()) > 0]
 	if len(lines) < 3:
 		return ''
 
 	return u' \\ '.join(lines)
+
+def clean(line):
+	line = replace_with_newlines(line)
+	# line = line.get_text()
+	return format(line)
 
 def special_char_ratio(text):
 	if len(text) > 0:
