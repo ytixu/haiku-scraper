@@ -49,6 +49,10 @@ http://www.modernhaiku.org/previousissue.html
 http://www.hsa-haiku.org/haikucollections.htm
 1064 haikus
 
+#### Haiku Foundation
+https://www.thehaikufoundation.org/haiku-registry
+35551 haikus
+
 ### Reformatting to word-line pairs
 
 #### Association score

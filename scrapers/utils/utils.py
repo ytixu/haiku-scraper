@@ -15,6 +15,19 @@ def replace_with_newlines(element):
 			text += '\n'
 	return text
 
+def remove_signatures(lines):
+	if len(lines) == 0:
+		return lines
+
+	lines = re.sub(u'\-[\-\w ]+$', u'', lines)
+	for i in range(3):
+		lines = re.sub(u' [A-Z][A-Za-z]*.?$', u'', lines)
+		lines = re.sub(' [A-Z][A-Za-z]*.?$', u'', lines)
+
+	if lines[-1] == '\\':
+		return lines[:-2]
+	return lines
+
 def clean_char(line):
 	# line = line.lower()
 	line = line.replace(u'\xe2', u'\'').replace(u'\u0027', u'\'').replace(u'\u2019', u'\'')
