@@ -53,6 +53,13 @@ http://www.hsa-haiku.org/haikucollections.htm
 https://www.thehaikufoundation.org/haiku-registry
 35551 haikus
 
+#### Best Haikus of All Time
+http://www.thehypertexts.com/Best%20Haiku.htm
+146 haikus
+
+#### Haikus from Basho and Buson
+246 haikus
+
 ### Reformatting to word-line pairs
 
 #### Association score

@@ -1,8 +1,7 @@
-from glob import glob
 import sys
 
 from utils import corpora, utils, conversion_statistics
-from reader.reader import read_lines
+from reader.reader import read_lines, get_all_files
 
 NAME = 'all_words'
 # CORPORA = ['wordnet', 'glove_twitter_25', 'glove_twitter_50',  'glove_twitter_100', 'glove_twitter_200',
@@ -14,7 +13,7 @@ def convert(corpus, data_file='data/*.csv', get_stats=True):
 		cst = conversion_statistics.statistics()
 		cst.print_header(['haiku corpus', 'dictionary'])
 
-	datafiles = glob(data_file)
+	datafiles = get_all_files()
 	for filename in datafiles:
 		for haiku in read_lines(filename):
 			lines, tokened_lines, tokens = utils.parse(haiku)

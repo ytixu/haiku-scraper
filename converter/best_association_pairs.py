@@ -1,9 +1,8 @@
-from glob import glob
 import sys
 import numpy as np
 
 from utils import corpora, utils, conversion_statistics, association
-from reader.reader import read_lines
+from reader.reader import get_all_files
 from all_word_pairs import convert as awp_convert
 
 NAME = 'best_words'
@@ -15,7 +14,7 @@ CORPORA = ['glove_haiku_50']
 def convert(corpus):
 	sr = conversion_statistics.record()
 
-	datafiles = glob('data/*.csv')
+	datafiles = datafiles = get_all_files()
 	for filename in datafiles:
 
 		for combo in awp_convert(corpus, filename, False):
