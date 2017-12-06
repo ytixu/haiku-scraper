@@ -15,7 +15,6 @@ def expand(input_word, corpus, std_level=1, mean_level=0):
 	bound = std_level*std
 	mean = CORPORA[corpus][0] + mean_level*std
 	thr = (mean+bound, mean-bound)
-	print thr, bound, mean
 	if n == 2:
 		w3 = expand_topic(topics, thr)
 		return topics + [w3]
@@ -40,7 +39,6 @@ if __name__ == '__main__':
 		assert(int(input_term) in range(1, 11))
 		s = int(input_term)
 
-	print m, s
 	while True:
 		input_term = raw_input("\nEnter word(s) (EXIT to break): ")
 		if input_term == 'EXIT':
