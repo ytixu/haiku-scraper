@@ -18,8 +18,8 @@ def scrape_and_save(converter_class):
 				for haiku in haikus:
 					spamwriter.writerow(flatten_and_encode(haiku))
 
-				# sys.stdout.write("\r%d" % count)
-				# sys.stdout.flush()
+				sys.stdout.write("\r%d" % count)
+				sys.stdout.flush()
 
 		print ' Done'
 

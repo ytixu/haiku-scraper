@@ -6,7 +6,7 @@ CORPORA = {
 # 			'glove_twitter_50':0.7,
 # 			'glove_wiki_50':0.6,
 # 			'glove_wiki_100':0.5,
-			'glove_haiku_50':(0.36, 0.05)}
+			'glove_haiku_50':(0.38, 0.0456)}
 
 def expand_topic(tp_list, thr):
 	topics = corpora.glove_sim_ranks(tp_list, thr)

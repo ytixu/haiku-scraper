@@ -1,132 +1,51 @@
---- 1+2 , 3
+glove_haiku_50 data/daily_haiku.csv 0.425095830172 0.0351634458902
+glove_haiku_50 data/haiku_foundation.csv 0.435089887472 0.036011827916
+glove_haiku_50 data/herons_nest.csv 0.42335191671 0.0347317458005
+glove_haiku_50 data/modern_haiku.csv 0.385545944175 0.0390344486953
+glove_haiku_50 data/reddit_haiku.csv 0.509576529442 0.0378001711574
+glove_haiku_50 data/temps_libres.csv 0.429227275048 0.0354147215604
+glove_haiku_50 data/twitter_haiku.csv 0.512806152542 0.0476147419966
+glove_haiku_50 data/basho-buson.txt 0.480833017137 0.0274050378304
+glove_haiku_50 data/best_haikus.txt 0.435134100356 0.0416482759311
+glove_haiku_50 data/hsa_haiku.txt 0.402351621654 0.0394728173559
+glove_haiku_50 data/mikhaemoji.txt 0.528670373464 0.0239452137492
+glove_haiku_50 data/write_a_haiku.txt 0.58020761498 0.0440544024446
 
-haiku corpus	dictionary	Average haiku expansion	Average word-to-topic ratio	Average word-to-topic ratio (stopwords removed)	Average line length (1)	Average line length (2)	Average line length (3)	Average association score
-data/daily_haiku.csv	glove_twitter_25	10.5581917281	0.710964671216	0.968666951658	2.66175056108	3.77332478358	3.02500801539	5.84600614166
-data/herons_nest.csv	glove_twitter_25	8.00941828255	0.689322253001	0.967298861188	2.50980609418	3.70903047091	3.05872576177	4.3687251977
-data/mikhaemoji.csv	glove_twitter_25	11.3	0.577023809524	0.931111111111	3.7	5.3	3.5	7.43970089935
-data/reddit_haiku.csv	glove_twitter_25	22.9421147838	0.632518404172	0.980715102776	3.98010195691	5.44203256043	4.3052129584	13.9080686175
-data/temps_libres.csv	glove_twitter_25	8.41173020528	0.659675607691	0.926636539486	2.90263929619	3.81798631476	3.04946236559	4.80818353636
-data/twitter_haiku.csv	glove_twitter_25	17.9890422078	0.668392448663	0.967686967464	3.38169642857	4.70211038961	3.77272727273	10.6129206752
-haiku corpus	dictionary	Average haiku expansion	Average word-to-topic ratio	Average word-to-topic ratio (stopwords removed)	Average line length (1)Average line length (2)	Average line length (3)	Average association score
-data/daily_haiku.csv	glove_twitter_50	10.5581917281	0.710964671216	0.968666951658	2.66175056108	3.77332478358	3.02500801539	4.93900236308
-data/herons_nest.csv	glove_twitter_50	8.00941828255	0.689322253001	0.967298861188	2.50980609418	3.70903047091	3.05872576177	3.60646864514
-data/mikhaemoji.csv	glove_twitter_50	11.3	0.577023809524	0.931111111111	3.7	5.3	3.5	6.69264770452
-data/reddit_haiku.csv	glove_twitter_50	22.9421147838	0.632518404172	0.980715102776	3.98010195691	5.44203256043	4.3052129584	12.2367082228
-data/temps_libres.csv	glove_twitter_50	8.41173020528	0.659675607691	0.926636539486	2.90263929619	3.81798631476	3.04946236559	4.05596859396
-data/twitter_haiku.csv	glove_twitter_50	17.9890422078	0.668392448663	0.967686967464	3.38169642857	4.70211038961	3.77272727273	9.2530828979
-haiku corpus	dictionary	Average haiku expansion	Average word-to-topic ratio	Average word-to-topic ratio (stopwords removed)	Average line length (1)	Average line length (2)	Average line length (3)	Average association score
-data/daily_haiku.csv	glove_wiki_50	10.9884578391	0.724076321776	0.98465498201	2.66175056108	3.77332478358	3.02500801539	3.9940676974
-data/herons_nest.csv	glove_wiki_50	8.44853185596	0.704682290522	0.987453370268	2.50980609418	3.70903047091	3.05872576177	2.83124242712
-data/mikhaemoji.csv	glove_wiki_50	12.2	0.588134920635	0.947777777778	3.7	5.3	3.5	5.10024814265
-data/reddit_haiku.csv	glove_wiki_50	23.436770268	0.637814146119	0.987211357196	3.98010195691	5.44203256043	4.3052129584	10.8656551239
-data/temps_libres.csv	glove_wiki_50	8.79472140762	0.670161428485	0.940168371327	2.90263929619	3.81798631476	3.04946236559	3.15977513711
-data/twitter_haiku.csv	glove_wiki_50	18.4935064935	0.67774219077	0.979175900158	3.38169642857	4.70211038961	3.77272727273	8.39370243157
-haiku corpus	dictionary	Average haiku expansion	Average word-to-topic ratio	Average word-to-topic ratio (stopwords removed)	Average line length (1)	Average line length (2)	Average line length (3)	Average association score
-data/daily_haiku.csv	glove_wiki_100	10.9884578391	0.724076321776	0.98465498201	2.66175056108	3.77332478358	3.02500801539	3.34367885993
-data/herons_nest.csv	glove_wiki_100	8.44853185596	0.704682290522	0.987453370268	2.50980609418	3.70903047091	3.05872576177	2.33794772403
-data/mikhaemoji.csv	glove_wiki_100	12.2	0.588134920635	0.947777777778	3.7	5.3	3.5	4.38387498395
-data/reddit_haiku.csv	glove_wiki_100	23.436770268	0.637814146119	0.987211357196	3.98010195691	5.44203256043	4.3052129584	9.38792555228
-data/temps_libres.csv	glove_wiki_100	8.79472140762	0.670161428485	0.940168371327	2.90263929619	3.81798631476	3.04946236559	2.6705067387
-data/twitter_haiku.csv	glove_wiki_100	18.4935064935	0.67774219077	0.979175900158	3.38169642857	4.70211038961	3.77272727273	7.25802764717
+glove_haiku_pair_50 data/daily_haiku.csv 0.388050595252 0.0365716955226
+glove_haiku_pair_50 data/haiku_foundation.csv 0.391883745926 0.0363043083823
+glove_haiku_pair_50 data/herons_nest.csv 0.376417553213 0.0344798017305
+glove_haiku_pair_50 data/modern_haiku.csv 0.335143630024 0.0338187953282
+glove_haiku_pair_50 data/reddit_haiku.csv 0.468217072629 0.0373812383958
+glove_haiku_pair_50 data/temps_libres.csv 0.391647271784 0.0360448536723
+glove_haiku_pair_50 data/twitter_haiku.csv 0.462800671616 0.0460317371314
+glove_haiku_pair_50 data/basho-buson.txt 0.441360314601 0.0342480868159
+glove_haiku_pair_50 data/best_haikus.txt 0.406243569234 0.0427554210478
+glove_haiku_pair_50 data/hsa_haiku.txt 0.370165817967 0.0396857988438
+glove_haiku_pair_50 data/mikhaemoji.txt 0.508152524492 0.0256889011717
+glove_haiku_pair_50 data/write_a_haiku.txt 0.549778246636 0.0487535225236
 
---- avg score
+glove_poem_50 data/daily_haiku.csv 0.476555966072 0.0264815637673
+glove_poem_50 data/haiku_foundation.csv 0.484263147084 0.0266281587885
+glove_poem_50 data/herons_nest.csv 0.471149892106 0.0235032720456
+glove_poem_50 data/modern_haiku.csv 0.42279926887 0.0258600821024
+glove_poem_50 data/reddit_haiku.csv 0.540383708858 0.0308868398991
+glove_poem_50 data/temps_libres.csv 0.486962215253 0.0261997374165
+glove_poem_50 data/twitter_haiku.csv 0.519911268798 0.0364712481098
+glove_poem_50 data/basho-buson.txt 0.515081723625 0.0288208647041
+glove_poem_50 data/best_haikus.txt 0.496616151263 0.0281467166511
+glove_poem_50 data/hsa_haiku.txt 0.462340723867 0.0280127890924
+glove_poem_50 data/mikhaemoji.txt 0.572400759473 0.0191259217214
+glove_poem_50 data/write_a_haiku.txt 0.626276293224 0.0363119619664
 
-haiku corpus	dictionary	Average haiku expansion	Average word-to-topic ratio	Average word-to-topic ratio (stopwords removed)	Average line length (1)	Average line length (2)	Average line length (3)	Average association score
-data/daily_haiku.csv	wordnet-eng	4.14171208721	0.545537294038	0.744350017835	2.66175056108	3.77332478358	3.02500801539	0.645182320736
-data/herons_nest.csv	wordnet-eng	3.82936288089	0.551493514488	0.774705711648	2.50980609418	3.70903047091	3.05872576177	0.56353213152
-data/mikhaemoji.csv	wordnet-eng	6.0	0.451706349206	0.756666666667	3.7	5.3	3.5	0.912149378399
-data/reddit_haiku.csv	wordnet-eng	8.04226278573	0.457957279767	0.716332047544	3.98010195691	5.44203256043	4.3052129584	1.38525521645
-data/temps_libres.csv	wordnet-eng	4.20430107527	0.525860881633	0.738282788317	2.90263929619	3.81798631476	3.04946236559	0.623746306356
-data/twitter_haiku.csv	wordnet-eng	6.5119724026	0.496577766495	0.724596974206	3.38169642857	4.70211038961	3.77272727273	1.03658676331
-haiku corpus	dictionary	Average haiku expansion	Average word-to-topic ratio	Average word-to-topic ratio (stopwords removed)	Average line length (1)Average line length (2)	Average line length (3)	Average association score
-data/daily_haiku.csv	wordnet	8.00512984931	0.676995577541	0.925805922552	2.66175056108	3.77332478358	3.02500801539	1.26135981899
-data/herons_nest.csv	wordnet	6.90559556787	0.672982705301	0.948871345029	2.50980609418	3.70903047091	3.05872576177	1.03109266022
-data/mikhaemoji.csv	wordnet	12.2	0.588134920635	0.947777777778	3.7	5.3	3.5	1.97025869963
-data/reddit_haiku.csv	wordnet	13.8561091926	0.553963480045	0.861258735539	3.98010195691	5.44203256043	4.3052129584	2.44828524119
-data/temps_libres.csv	wordnet	7.26979472141	0.635152934029	0.896176859598	2.90263929619	3.81798631476	3.04946236559	1.10005944445
-data/twitter_haiku.csv	wordnet	10.8492288961	0.601263531555	0.866533291031	3.38169642857	4.70211038961	3.77272727273	1.8036809891
-haiku corpus	dictionary	Average haiku expansion	Average word-to-topic ratio	Average word-to-topic ratio (stopwords removed)	Average line length (1)Average line length (2)	Average line length (3)	Average association score
-data/daily_haiku.csv	glove_twitter_25	10.5581917281	0.710964671216	0.968666951658	2.66175056108	3.77332478358	3.02500801539	3.72956419932
-data/herons_nest.csv	glove_twitter_25	8.00941828255	0.689322253001	0.967298861188	2.50980609418	3.70903047091	3.05872576177	2.50080646413
-data/mikhaemoji.csv	glove_twitter_25	11.3	0.577023809524	0.931111111111	3.7	5.3	3.5	5.11526649713
-data/reddit_haiku.csv	glove_twitter_25	22.9421147838	0.632518404172	0.980715102776	3.98010195691	5.44203256043	4.3052129584	10.2345366846
-data/temps_libres.csv	glove_twitter_25	8.41173020528	0.659675607691	0.926636539486	2.90263929619	3.81798631476	3.04946236559	2.99578327374
-data/twitter_haiku.csv	glove_twitter_25	17.9890422078	0.668392448663	0.967686967464	3.38169642857	4.70211038961	3.77272727273	7.72324240196
-haiku corpus	dictionary	Average haiku expansion	Average word-to-topic ratio	Average word-to-topic ratio (stopwords removed)	Average line length (1)Average line length (2)	Average line length (3)	Average association score
-data/daily_haiku.csv	glove_twitter_50	10.5581917281	0.710964671216	0.968666951658	2.66175056108	3.77332478358	3.02500801539	3.32167989587
-data/herons_nest.csv	glove_twitter_50	8.00941828255	0.689322253001	0.967298861188	2.50980609418	3.70903047091	3.05872576177	2.22605927764
-data/mikhaemoji.csv	glove_twitter_50	11.3	0.577023809524	0.931111111111	3.7	5.3	3.5	4.78923399374
-data/reddit_haiku.csv	glove_twitter_50	22.9421147838	0.632518404172	0.980715102776	3.98010195691	5.44203256043	4.3052129584	9.25544123984
-data/temps_libres.csv	glove_twitter_50	8.41173020528	0.659675607691	0.926636539486	2.90263929619	3.81798631476	3.04946236559	2.68706798857
-data/twitter_haiku.csv	glove_twitter_50	17.9890422078	0.668392448663	0.967686967464	3.38169642857	4.70211038961	3.77272727273	6.94480362538
-haiku corpus	dictionary	Average haiku expansion	Average word-to-topic ratio	Average word-to-topic ratio (stopwords removed)	Average line length (1)Average line length (2)	Average line length (3)	Average association score
-data/daily_haiku.csv	glove_wiki_50	10.9884578391	0.724076321776	0.98465498201	2.66175056108	3.77332478358	3.02500801539	3.13526838351
-data/herons_nest.csv	glove_wiki_50	8.44853185596	0.704682290522	0.987453370268	2.50980609418	3.70903047091	3.05872576177	2.12853823026
-data/mikhaemoji.csv	glove_wiki_50	12.2	0.588134920635	0.947777777778	3.7	5.3	3.5	3.75510046003
-data/reddit_haiku.csv	glove_wiki_50	23.436770268	0.637814146119	0.987211357196	3.98010195691	5.44203256043	4.3052129584	8.51868638753
-data/temps_libres.csv	glove_wiki_50	8.79472140762	0.670161428485	0.940168371327	2.90263929619	3.81798631476	3.04946236559	2.41092912114
-data/twitter_haiku.csv	glove_wiki_50	18.4935064935	0.67774219077	0.979175900158	3.38169642857	4.70211038961	3.77272727273	6.61355031623
-haiku corpus	dictionary	Average haiku expansion	Average word-to-topic ratio	Average word-to-topic ratio (stopwords removed)	Average line length (1)Average line length (2)	Average line length (3)	Average association score
-data/daily_haiku.csv	glove_wiki_100	10.9884578391	0.724076321776	0.98465498201	2.66175056108	3.77332478358	3.02500801539	2.58039421496
-data/herons_nest.csv	glove_wiki_100	8.44853185596	0.704682290522	0.987453370268	2.50980609418	3.70903047091	3.05872576177	1.73526667242
-data/mikhaemoji.csv	glove_wiki_100	12.2	0.588134920635	0.947777777778	3.7	5.3	3.5	3.23458137471
-data/reddit_haiku.csv	glove_wiki_100	23.436770268	0.637814146119	0.987211357196	3.98010195691	5.44203256043	4.3052129584	7.17687875701
-data/temps_libres.csv	glove_wiki_100	8.79472140762	0.670161428485	0.940168371327	2.90263929619	3.81798631476	3.04946236559	2.00618949354
-data/twitter_haiku.csv	glove_wiki_100	18.4935064935	0.67774219077	0.979175900158	3.38169642857	4.70211038961	3.77272727273	5.56397552649
-
-
-
-
-
-
-Converting best_words with glove_twitter_25
-glove_twitter_25 data/daily_haiku.csv 0.785708239044
-glove_twitter_25 data/herons_nest.csv 0.777210611865
-glove_twitter_25 data/mikhaemoji.csv 0.77726878762
-glove_twitter_25 data/reddit_haiku.csv 0.805336160167
-glove_twitter_25 data/temps_libres.csv 0.801851847148
-glove_twitter_25 data/twitter_haiku.csv 0.807418696524
-
-Converting best_words with glove_twitter_25
-glove_twitter_25 data/daily_haiku.csv 0.747357329199
-glove_twitter_25 data/herons_nest.csv 0.738229744831
-glove_twitter_25 data/mikhaemoji.csv 0.738306434922
-glove_twitter_25 data/reddit_haiku.csv 0.771350024737
-glove_twitter_25 data/temps_libres.csv 0.767202544372
-glove_twitter_25 data/twitter_haiku.csv 0.7736687905
-
-Converting best_words with glove_twitter_50
-glove_twitter_50 data/daily_haiku.csv 0.647799420953
-glove_twitter_50 data/herons_nest.csv 0.63506161385
-glove_twitter_50 data/mikhaemoji.csv 0.635185678613
-glove_twitter_50 data/reddit_haiku.csv 0.677544226847
-glove_twitter_50 data/temps_libres.csv 0.673227839035
-glove_twitter_50 data/twitter_haiku.csv 0.681124119016
- Done
-Converting best_words with glove_wiki_50
-glove_wiki_50 data/daily_haiku.csv 0.546416661901
-glove_wiki_50 data/herons_nest.csv 0.531335284703
-glove_wiki_50 data/mikhaemoji.csv 0.5314644119
-glove_wiki_50 data/reddit_haiku.csv 0.583723124585
-glove_wiki_50 data/temps_libres.csv 0.578437173914
-glove_wiki_50 data/twitter_haiku.csv 0.590296372736
- Done
-Converting best_words with glove_wiki_100
-glove_wiki_100 data/daily_haiku.csv 0.461884310899
-glove_wiki_100 data/herons_nest.csv 0.446454785562
-glove_wiki_100 data/mikhaemoji.csv 0.446587059315
-glove_wiki_100 data/reddit_haiku.csv 0.500282835357
-glove_wiki_100 data/temps_libres.csv 0.495523100368
-glove_wiki_100 data/twitter_haiku.csv 0.507794671145
- Done
-
-
-2637glove_haiku_50 data/daily_haiku.csv 0.357280552368 0.0464979427598
-10260glove_haiku_50 data/herons_nest.csv 0.357637144935 0.0438426424914
-10839glove_haiku_50 data/hsa_haiku.csv 0.356566539173 0.0441245800523
-10849glove_haiku_50 data/mikhaemoji.csv 0.3566718037 0.0441249742062
-11142glove_haiku_50 data/modern_haiku.csv 0.355237483642 0.0443131611342
-16189glove_haiku_50 data/reddit_haiku.csv 0.383749767841 0.046844620716
-20510glove_haiku_50 data/temps_libres.csv 0.380035201266 0.046402419614
-24256glove_haiku_50 data/twitter_haiku.csv 0.39109512994 0.0488310002762
-glove_haiku_50 data/write_a_haiku.csv 0.39109512994 0.0488310002762
+glove_poem_pair_50 data/daily_haiku.csv 0.426720520313 0.0308187132536
+glove_poem_pair_50 data/haiku_foundation.csv 0.430753140632 0.0301892363038
+glove_poem_pair_50 data/herons_nest.csv 0.415355115674 0.027218049136
+glove_poem_pair_50 data/modern_haiku.csv 0.367671944758 0.0308155489674
+glove_poem_pair_50 data/reddit_haiku.csv 0.500054891507 0.0335015490394
+glove_poem_pair_50 data/temps_libres.csv 0.439545564794 0.0293613901322
+glove_poem_pair_50 data/twitter_haiku.csv 0.473346197345 0.0392785278992
+glove_poem_pair_50 data/basho-buson.txt 0.466559954747 0.0310958709744
+glove_poem_pair_50 data/best_haikus.txt 0.443525686815 0.0325005803886
+glove_poem_pair_50 data/hsa_haiku.txt 0.412536348356 0.032246705612
+glove_poem_pair_50 data/mikhaemoji.txt 0.563596556276 0.0187410765112
+glove_poem_pair_50 data/write_a_haiku.txt 0.596324130905 0.0385583520554

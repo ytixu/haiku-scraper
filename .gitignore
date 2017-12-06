@@ -5,3 +5,4 @@ scrapers/utils/oauth.py
 /corpora/glove.twitter*
 /corpora/glove.4*
 stat-res-plots.ods
+data/converted/back/*

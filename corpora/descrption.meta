@@ -1,0 +1,186 @@
+# BUILDING VECTORS
+
+1) haikus
+
+mkdir -p build
+gcc src/glove.c -o build/glove -lm -pthread -Ofast -march=native -funroll-loops -Wno-unused-result
+src/glove.c: In function ‘save_params’:
+src/glove.c:224:2: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘long long int’ [-Wformat=]
+  if (write_header) fprintf(fout, "%ld %d\n", vocab_size, vector_size);
+  ^
+gcc src/shuffle.c -o build/shuffle -lm -pthread -Ofast -march=native -funroll-loops -Wno-unused-result
+gcc src/cooccur.c -o build/cooccur -lm -pthread -Ofast -march=native -funroll-loops -Wno-unused-result
+gcc src/vocab_count.c -o build/vocab_count -lm -pthread -Ofast -march=native -funroll-loops -Wno-unused-result
+$ build/vocab_count -min-count 5 -verbose 2 < haikus_lower > vocab.txt
+BUILDING VOCABULARY
+Processed 280284 tokens.
+Counted 23640 unique words.
+Truncating vocabulary at min count 5.
+Using vocabulary of size 6147.
+
+$ build/cooccur -memory 4.0 -vocab-file vocab.txt -verbose 2 -window-size 100 < haikus_lower > cooccurrence.bin
+COUNTING COOCCURRENCES
+window size: 100
+context: symmetric
+max product: 13752509
+overflow length: 38028356
+Reading vocab from file "vocab.txt"...loaded 6147 words.
+Building lookup table...table contains 27648365 elements.
+Processed 280284 tokens.
+Writing cooccurrences to disk.......2 files in total.
+Merging cooccurrence files: processed 836756 lines.
+
+$ build/shuffle -memory 4.0 -verbose 2 < cooccurrence.bin > cooccurrence.shuf.bin
+SHUFFLING COOCCURRENCES
+array size: 255013683
+Shuffling by chunks: processed 836756 lines.
+Wrote 1 temporary file(s).
+Merging temp files: processed 836756 lines.
+
+$ build/glove -save-file vectors -threads 8 -input-file cooccurrence.shuf.bin -x-max 10 -iter 15 -vector-size 50 -binary 2 -vocab-file vocab.txt -verbose 2
+TRAINING MODEL
+Read 836756 lines.
+Initializing parameters...done.
+vector size: 50
+vocab size: 6147
+x_max: 10.000000
+alpha: 0.750000
+12/03/17 - 11:16.44AM, iter: 001, cost: 0.068164
+12/03/17 - 11:16.44AM, iter: 002, cost: 0.058882
+12/03/17 - 11:16.45AM, iter: 003, cost: 0.050635
+12/03/17 - 11:16.45AM, iter: 004, cost: 0.047187
+12/03/17 - 11:16.46AM, iter: 005, cost: 0.045472
+12/03/17 - 11:16.46AM, iter: 006, cost: 0.043849
+12/03/17 - 11:16.46AM, iter: 007, cost: 0.042114
+12/03/17 - 11:16.47AM, iter: 008, cost: 0.040098
+12/03/17 - 11:16.47AM, iter: 009, cost: 0.037992
+12/03/17 - 11:16.48AM, iter: 010, cost: 0.035879
+12/03/17 - 11:16.48AM, iter: 011, cost: 0.033912
+12/03/17 - 11:16.48AM, iter: 012, cost: 0.032120
+12/03/17 - 11:16.49AM, iter: 013, cost: 0.030522
+12/03/17 - 11:16.49AM, iter: 014, cost: 0.029125
+12/03/17 - 11:16.50AM, iter: 015, cost: 0.027907
+
+
+2) haiku-pairs
+
+mkdir -p build
+gcc src/glove.c -o build/glove -lm -pthread -Ofast -march=native -funroll-loops -Wno-unused-result
+src/glove.c: In function ‘save_params’:
+src/glove.c:224:2: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘long long int’ [-Wformat=]
+  if (write_header) fprintf(fout, "%ld %d\n", vocab_size, vector_size);
+  ^
+gcc src/shuffle.c -o build/shuffle -lm -pthread -Ofast -march=native -funroll-loops -Wno-unused-result
+gcc src/cooccur.c -o build/cooccur -lm -pthread -Ofast -march=native -funroll-loops -Wno-unused-result
+gcc src/vocab_count.c -o build/vocab_count -lm -pthread -Ofast -march=native -funroll-loops -Wno-unused-result
+$ build/vocab_count -min-count 5 -verbose 2 < haikus_lower_paired > vocab.txt
+BUILDING VOCABULARY
+Processed 383944 tokens.
+Counted 23439 unique words.
+Truncating vocabulary at min count 5.
+Using vocabulary of size 7770.
+
+$ build/cooccur -memory 4.0 -vocab-file vocab.txt -verbose 2 -window-size 100 < haikus_lower_paired > cooccurrence.bin
+COUNTING COOCCURRENCES
+window size: 100
+context: symmetric
+max product: 13752509
+overflow length: 38028356
+Reading vocab from file "vocab.txt"...loaded 7770 words.
+Building lookup table...table contains 34090853 elements.
+Processed 383944 tokens.
+Writing cooccurrences to disk.......2 files in total.
+Merging cooccurrence files: processed 732450 lines.
+
+$ build/shuffle -memory 4.0 -verbose 2 < cooccurrence.bin > cooccurrence.shuf.bin
+SHUFFLING COOCCURRENCES
+array size: 255013683
+Shuffling by chunks: processed 732450 lines.
+Wrote 1 temporary file(s).
+Merging temp files: processed 732450 lines.
+
+$ build/glove -save-file vectors -threads 8 -input-file cooccurrence.shuf.bin -x-max 10 -iter 15 -vector-size 50 -binary 2 -vocab-file vocab.txt -verbose 2
+TRAINING MODEL
+Read 732450 lines.
+Initializing parameters...done.
+vector size: 50
+vocab size: 7770
+x_max: 10.000000
+alpha: 0.750000
+12/03/17 - 11:18.51AM, iter: 001, cost: 0.083669
+12/03/17 - 11:18.52AM, iter: 002, cost: 0.077171
+12/03/17 - 11:18.52AM, iter: 003, cost: 0.068819
+12/03/17 - 11:18.52AM, iter: 004, cost: 0.064112
+12/03/17 - 11:18.53AM, iter: 005, cost: 0.061557
+12/03/17 - 11:18.53AM, iter: 006, cost: 0.058570
+12/03/17 - 11:18.53AM, iter: 007, cost: 0.055777
+12/03/17 - 11:18.54AM, iter: 008, cost: 0.052558
+12/03/17 - 11:18.54AM, iter: 009, cost: 0.049185
+12/03/17 - 11:18.54AM, iter: 010, cost: 0.045956
+12/03/17 - 11:18.55AM, iter: 011, cost: 0.043041
+12/03/17 - 11:18.55AM, iter: 012, cost: 0.040446
+12/03/17 - 11:18.56AM, iter: 013, cost: 0.038154
+12/03/17 - 11:18.56AM, iter: 014, cost: 0.036177
+12/03/17 - 11:18.56AM, iter: 015, cost: 0.034442
+
+
+3) poem
+
+mkdir -p build
+gcc src/glove.c -o build/glove -lm -pthread -Ofast -march=native -funroll-loops -Wno-unused-result
+src/glove.c: In function ‘save_params’:
+src/glove.c:224:2: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘long long int’ [-Wformat=]
+  if (write_header) fprintf(fout, "%ld %d\n", vocab_size, vector_size);
+  ^
+gcc src/shuffle.c -o build/shuffle -lm -pthread -Ofast -march=native -funroll-loops -Wno-unused-result
+gcc src/cooccur.c -o build/cooccur -lm -pthread -Ofast -march=native -funroll-loops -Wno-unused-result
+gcc src/vocab_count.c -o build/vocab_count -lm -pthread -Ofast -march=native -funroll-loops -Wno-unused-result
+$ build/vocab_count -min-count 5 -verbose 2 < poem_lower > vocab.txt
+BUILDING VOCABULARY
+Processed 967826 tokens.
+Counted 69712 unique words.
+Truncating vocabulary at min count 5.
+Using vocabulary of size 16123.
+
+$ build/cooccur -memory 4.0 -vocab-file vocab.txt -verbose 2 -window-size 100 < poem_lower > cooccurrence.bin
+COUNTING COOCCURRENCES
+window size: 100
+context: symmetric
+max product: 13752509
+overflow length: 38028356
+Reading vocab from file "vocab.txt"...loaded 16123 words.
+Building lookup table...table contains 54159607 elements.
+Processed 967826 tokens.
+Writing cooccurrences to disk........2 files in total.
+Merging cooccurrence files: processed 5154528 lines.
+
+$ build/shuffle -memory 4.0 -verbose 2 < cooccurrence.bin > cooccurrence.shuf.bin
+SHUFFLING COOCCURRENCES
+array size: 255013683
+Shuffling by chunks: processed 5154528 lines.
+Wrote 1 temporary file(s).
+Merging temp files: processed 5154528 lines.
+
+$ build/glove -save-file vectors -threads 8 -input-file cooccurrence.shuf.bin -x-max 10 -iter 15 -vector-size 50 -binary 2 -vocab-file vocab.txt -verbose 2
+TRAINING MODEL
+Read 5154528 lines.
+Initializing parameters...done.
+vector size: 50
+vocab size: 16123
+x_max: 10.000000
+alpha: 0.750000
+12/03/17 - 11:22.50AM, iter: 001, cost: 0.059934
+12/03/17 - 11:22.52AM, iter: 002, cost: 0.042603
+12/03/17 - 11:22.55AM, iter: 003, cost: 0.040820
+12/03/17 - 11:22.57AM, iter: 004, cost: 0.039337
+12/03/17 - 11:23.00AM, iter: 005, cost: 0.037687
+12/03/17 - 11:23.02AM, iter: 006, cost: 0.035934
+12/03/17 - 11:23.04AM, iter: 007, cost: 0.034342
+12/03/17 - 11:23.07AM, iter: 008, cost: 0.032986
+12/03/17 - 11:23.09AM, iter: 009, cost: 0.031855
+12/03/17 - 11:23.12AM, iter: 010, cost: 0.030914
+12/03/17 - 11:23.14AM, iter: 011, cost: 0.030105
+12/03/17 - 11:23.17AM, iter: 012, cost: 0.029430
+12/03/17 - 11:23.19AM, iter: 013, cost: 0.028832
+12/03/17 - 11:23.22AM, iter: 014, cost: 0.028332
+12/03/17 - 11:23.24AM, iter: 015, cost: 0.027842

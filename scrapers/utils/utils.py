@@ -4,6 +4,7 @@ from bs4 import Comment
 
 special_chars = '''!"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ '''
 
+
 def replace_with_newlines(element):
 	text = ''
 	for elem in element.recursiveChildGenerator():
@@ -30,7 +31,7 @@ def remove_signatures(lines):
 
 def clean_char(line):
 	# line = line.lower()
-	line = line.replace(u'\xe2', u'\'').replace(u'\u0027', u'\'').replace(u'\u2019', u'\'')
+	line = line.replace(u'\xe2', u'\'').replace(u'\u0027', u'\'').replace(u'\u2019', u'\'').replace(u'\u2018', u'\'')
 	line = re.sub('&nbsp', u' ', line)
 	line = re.sub(u'[^0-9a-zA-Z\n\.\' \-\,]+', u' ', line)
 	return re.sub(u' {2,}', u' ', line)

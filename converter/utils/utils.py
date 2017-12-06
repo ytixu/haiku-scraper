@@ -22,7 +22,7 @@ def filter_punctuations(tokens):
 	return [t.strip('-') for t in tokens]
 
 def parse(haiku):
-	haiku = haiku.lower()
+	haiku = haiku.lower().replace('-', ' ')
 	lines = haiku.split(' \\ ')
 	tokened_lines = [filter_punctuations(tokenize(l)) for l in lines]
 	return lines, tokened_lines, [filter_stopwords(l) for l in tokened_lines]

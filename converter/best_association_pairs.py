@@ -9,12 +9,15 @@ NAME = 'best_words'
 # CORPORA = ['wordnet', 'glove_twitter_25', 'glove_twitter_50',  'glove_twitter_100', 'glove_twitter_200',
 # 		'glove_wiki_50', 'glove_wiki_100', 'glove_wiki_200', 'glove_wiki_300', 'glove_crawl_300', 'glove_haiku_50']
 # CORPORA = ['glove_haiku_50', 'glove_twitter_25', 'glove_twitter_50', 'glove_wiki_50', 'glove_wiki_100']
-CORPORA = ['glove_haiku_50']
+CORPORA = [
+# 'glove_twitter_25', 'glove_twitter_50', 'glove_wiki_50', 'glove_wiki_100',
+		# 'glove_haiku_50', 'glove_haiku_pair_50', 'glove_poem_50',
+		'glove_poem_pair_50']
 
 def convert(corpus):
 	sr = conversion_statistics.record()
 
-	datafiles = datafiles = get_all_files()
+	datafiles = get_all_files()
 	for filename in datafiles:
 
 		for combo in awp_convert(corpus, filename, False):
@@ -31,6 +34,7 @@ def convert(corpus):
 			yield [combo[i] for i in best_idx]
 
 		sr.print_stats(corpus, filename)
+		sr.reset()
 
 if __name__ == '__main__':
 	for corpus in CORPORA:

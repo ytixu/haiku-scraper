@@ -14,7 +14,10 @@ GLOVE_FILE_DIM = 0
 GLOVE_FILES = ['./corpora/glove.twitter.27B/glove.twitter.27B.DIMd.txt',
 				'./corpora/glove.6B/glove.6B.DIMd.txt',
 				'./corpora/glove.42B.300d.txt',
-				'./corpora/glove.haiku.50d.txt']
+				'./corpora/glove.haikus.50.txt',
+				'./corpora/glove.haiku_pair.50.txt',
+				'./corpora/glove.poems.50.txt',
+				'./corpora/glove.poem_pair.50.txt']
 
 def from_wordnet(token):
 	# return len(wn.synsets(token)) > 0
@@ -117,6 +120,15 @@ def from_glove_crawl_300(token):
 def from_glove_haiku_50(token):
 	return from_glove(token, 3)
 
+def from_glove_haiku_pair_50(token):
+	return from_glove(token, 4)
+
+def from_glove_poem_50(token):
+	return from_glove(token, 5)
+
+def from_glove_poem_pair_50(token):
+	return from_glove(token, 6)
+
 def __glove_vector(ta_list, W, vocab, ivocab):
 	for idx, term in enumerate(ta_list):
 		if term in vocab:
@@ -144,6 +156,20 @@ def _glove_sim_score(ta_list, tb):
 		return 0
 
 	vec_norm = __glove_vector(ta_list, W, vocab, ivocab)
+
+	# START---------- rank instead of score
+	# dist = np.dot(W, vec_norm.T)
+
+	# for term in ta_list:
+	# 	index = vocab[term]
+	# 	dist[index] = -np.Inf
+	# a = np.argsort(-dist)
+	# i = np.where(a==vocab[tb])[0]
+	# # if len(i) == 0:
+	# # 	return 101
+	# return i[0]
+	# END ---------- rank instead of score
+
 	return np.dot(W[vocab[tb]], vec_norm.T)
 
 def glove_sim_ranks(ta_list, thr):

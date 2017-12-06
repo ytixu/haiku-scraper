@@ -57,6 +57,8 @@ class record:
 		self.total += 1
 
 	def print_stats(self, *messages):
+		if self.total == 0:
+			self.total = 1
 		mu = self.val / self.total
 		print ' '.join(messages), mu, self.var / self.total - mu**2
 

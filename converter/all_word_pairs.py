@@ -8,12 +8,16 @@ NAME = 'all_words'
 # 		'glove_wiki_50', 'glove_wiki_100', 'glove_wiki_200', 'glove_wiki_300', 'glove_crawl_300']
 CORPORA = ['wordnet', 'glove_twitter_25', 'glove_twitter_50', 'glove_wiki_50', 'glove_wiki_100']
 
-def convert(corpus, data_file='data/*.csv', get_stats=True):
+def convert(corpus, data_file=None, get_stats=True):
 	if get_stats:
 		cst = conversion_statistics.statistics()
 		cst.print_header(['haiku corpus', 'dictionary'])
 
-	datafiles = get_all_files()
+	if not data_file:
+		datafiles = get_all_files()
+	else:
+		datafiles = [data_file]
+
 	for filename in datafiles:
 		for haiku in read_lines(filename):
 			lines, tokened_lines, tokens = utils.parse(haiku)
@@ -45,7 +49,7 @@ def convert(corpus, data_file='data/*.csv', get_stats=True):
 if __name__ == '__main__':
 	for corpus in CORPORA:
 		count = 1
-		for pairs in convert(corpus):
+		for pairs in convert(corpus, 'data/best_haikus.txt'):
 			print pairs
 			# sys.stdout.write("\r%d" % count)
 			# sys.stdout.flush()
