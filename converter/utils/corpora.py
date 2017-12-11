@@ -157,19 +157,6 @@ def _glove_sim_score(ta_list, tb):
 
 	vec_norm = __glove_vector(ta_list, W, vocab, ivocab)
 
-	# START---------- rank instead of score
-	# dist = np.dot(W, vec_norm.T)
-
-	# for term in ta_list:
-	# 	index = vocab[term]
-	# 	dist[index] = -np.Inf
-	# a = np.argsort(-dist)
-	# i = np.where(a==vocab[tb])[0]
-	# # if len(i) == 0:
-	# # 	return 101
-	# return i[0]
-	# END ---------- rank instead of score
-
 	return np.dot(W[vocab[tb]], vec_norm.T)
 
 def glove_sim_ranks(ta_list, thr):
