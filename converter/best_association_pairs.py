@@ -10,9 +10,13 @@ NAME = 'best_words'
 # 		'glove_wiki_50', 'glove_wiki_100', 'glove_wiki_200', 'glove_wiki_300', 'glove_crawl_300', 'glove_haiku_50']
 # CORPORA = ['glove_haiku_50', 'glove_twitter_25', 'glove_twitter_50', 'glove_wiki_50', 'glove_wiki_100']
 CORPORA = [
-# 'glove_twitter_25', 'glove_twitter_50', 'glove_wiki_50', 'glove_wiki_100',
-		# 'glove_haiku_50', 'glove_haiku_pair_50', 'glove_poem_50',
-		'glove_poem_pair_50']
+	# 'glove_twitter_25',
+	# 'glove_wiki_50'
+	# 'glove_twitter_50',
+	# 'glove_wiki_100',
+		'glove_haiku_50', 'glove_haiku_pair_50', 'glove_poem_50'
+		# 'glove_poem_pair_50'
+		]
 
 def convert(corpus):
 	sr = conversion_statistics.record()

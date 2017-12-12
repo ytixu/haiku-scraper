@@ -20,13 +20,12 @@ def scrape_and_save(converter_class):
 
 		print ' Done'
 
-def compute_association_for_gen():
+def compute_association_for_gen(corpus):
 	from utils.conversion_statistics import record
 	from utils.corpora import _glove_sim_score, get_topics
 
 	first_pair = record()
 	second_pair = record()
-	corpus = 'glove_poem_pair_50'
 	get_topics([''], corpus)
 
 	with open('data/converted/best_words-%s.csv' % (corpus)) as csv_file:
@@ -37,6 +36,7 @@ def compute_association_for_gen():
 			sys.stdout.write("\r%d" % count)
 			sys.stdout.flush()
 
+	print corpus
 	first_pair.print_stats()
 	second_pair.print_stats()
 
@@ -45,4 +45,6 @@ if __name__ == '__main__':
 	import best_association_pairs
 	# scrape_and_save(all_word_pairs)
 	# scrape_and_save(best_association_pairs)
-	compute_association_for_gen()
+	corpus = ['glove_poem_50', 'glove_poem_pair_50', 'glove_haiku_50','glove_haiku_pair_50']
+	for c in corpus:
+		compute_association_for_gen(c)

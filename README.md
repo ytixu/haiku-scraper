@@ -51,7 +51,7 @@ http://www.hsa-haiku.org/haikucollections.htm
 
 #### Haiku Foundation
 https://www.thehaikufoundation.org/haiku-registry
-35551 haikus
+3551 haikus
 
 #### Best Haikus of All Time
 http://www.thehypertexts.com/Best%20Haiku.htm
