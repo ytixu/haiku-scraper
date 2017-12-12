@@ -49,3 +49,96 @@ glove_poem_pair_50 data/best_haikus.txt 0.443525686815 0.0325005803886
 glove_poem_pair_50 data/hsa_haiku.txt 0.412536348356 0.032246705612
 glove_poem_pair_50 data/mikhaemoji.txt 0.563596556276 0.0187410765112
 glove_poem_pair_50 data/write_a_haiku.txt 0.596324130905 0.0385583520554
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3021glove_twitter_50 data/daily_haiku.csv 0.650905987569 0.0173693120435
+6440glove_twitter_50 data/haiku_foundation.csv 0.652335336852 0.0175712830641
+15147glove_twitter_50 data/herons_nest.csv 0.633242914499 0.0170030830494
+15515glove_twitter_50 data/modern_haiku.csv 0.642545123228 0.0191084974298
+21498glove_twitter_50 data/reddit_haiku.csv 0.758562799822 0.013163847952
+26470glove_twitter_50 data/temps_libres.csv 0.658973100487 0.0172050200032
+31277glove_twitter_50 data/twitter_haiku.csv 0.719166793469 0.0173686534182
+31426glove_twitter_50 data/basho-buson.txt 0.695927017543 0.0175390454748
+31537glove_twitter_50 data/best_haikus.txt 0.667282915348 0.0160850657913
+32273glove_twitter_50 data/hsa_haiku.txt 0.654995889688 0.017196755405
+32285glove_twitter_50 data/mikhaemoji.txt 0.794298857151 0.00768501607739
+32322glove_twitter_50 data/write_a_haiku.txt 0.801225822941 0.0089298947384
+3071glove_wiki_100 data/daily_haiku.csv 0.46302034326 0.0240924165127
+6539glove_wiki_100 data/haiku_foundation.csv 0.467602137602 0.0245664185686
+15463glove_wiki_100 data/herons_nest.csv 0.441319775169 0.0231653132351
+15833glove_wiki_100 data/modern_haiku.csv 0.467829919286 0.0261138929731
+21838glove_wiki_100 data/reddit_haiku.csv 0.60436109403 0.0233734026229
+26867glove_wiki_100 data/temps_libres.csv 0.477416441512 0.0226433476027
+31725glove_wiki_100 data/twitter_haiku.csv 0.565768016566 0.0273209169449
+31877glove_wiki_100 data/basho-buson.txt 0.515731562547 0.0237235350877
+31990glove_wiki_100 data/best_haikus.txt 0.499813432774 0.0210267493253
+32739glove_wiki_100 data/hsa_haiku.txt 0.468950901835 0.0238522485316
+32751glove_wiki_100 data/mikhaemoji.txt 0.625768927018 0.0235567038429
+32788glove_wiki_100 data/write_a_haiku.txt 0.650972227187 0.0272810689685
+/media/ytixu/TOSHIBA EXT/robot/haiku-scraper/converter/utils/corpora.py:82: RuntimeWarning: invalid value encountered in divide
+  W_norm = (W.T / d).T
+2711glove_haiku_50 data/daily_haiku.csv 0.353138022876 0.0415973456167
+5759glove_haiku_50 data/haiku_foundation.csv 0.362141264751 0.0422400514883
+13588glove_haiku_50 data/herons_nest.csv 0.35236667254 0.0398247363463
+13890glove_haiku_50 data/modern_haiku.csv 0.300805397854 0.0475140004877
+19013glove_haiku_50 data/reddit_haiku.csv 0.434240180437 0.0448601101955
+23426glove_haiku_50 data/temps_libres.csv 0.35916159293 0.0410406051756
+27244glove_haiku_50 data/twitter_haiku.csv 0.442758924373 0.054563344456
+27379glove_haiku_50 data/basho-buson.txt 0.407522172649 0.03941647612
+27476glove_haiku_50 data/best_haikus.txt 0.376109472971 0.0441374191409
+28107glove_haiku_50 data/hsa_haiku.txt 0.331795042284 0.0449202030208
+28119glove_haiku_50 data/mikhaemoji.txt 0.477548510863 0.027556686667
+28150glove_haiku_50 data/write_a_haiku.txt 0.485717032981 0.0572101518626
+2796glove_haiku_pair_50 data/daily_haiku.csv 0.317047508776 0.0412922465328
+5929glove_haiku_pair_50 data/haiku_foundation.csv 0.32053761443 0.0404988199065
+14021glove_haiku_pair_50 data/herons_nest.csv 0.306261934625 0.0384764515708
+14341glove_haiku_pair_50 data/modern_haiku.csv 0.255136102671 0.0395853561021
+19643glove_haiku_pair_50 data/reddit_haiku.csv 0.394166599189 0.0432550528155
+24182glove_haiku_pair_50 data/temps_libres.csv 0.321199157929 0.0405122349264
+28185glove_haiku_pair_50 data/twitter_haiku.csv 0.392613622103 0.0524117561599
+28323glove_haiku_pair_50 data/basho-buson.txt 0.373418022524 0.0384528778584
+28423glove_haiku_pair_50 data/best_haikus.txt 0.340975924131 0.0453655270874
+29075glove_haiku_pair_50 data/hsa_haiku.txt 0.299156392967 0.0437300026977
+29087glove_haiku_pair_50 data/mikhaemoji.txt 0.445087457371 0.0271000572023
+29118glove_haiku_pair_50 data/write_a_haiku.txt 0.450928268406 0.0612844333254
+2876glove_poem_50 data/daily_haiku.csv 0.418367072313 0.0311142917056
+6092glove_poem_50 data/haiku_foundation.csv 0.426115910682 0.0304333414286
+14385glove_poem_50 data/herons_nest.csv 0.413861337946 0.0275974055189
+14725glove_poem_50 data/modern_haiku.csv 0.364023726048 0.030566144841
+20329glove_poem_50 data/reddit_haiku.csv 0.480881414618 0.0353639537672
+25005glove_poem_50 data/temps_libres.csv 0.429360813641 0.02977663391
+29415glove_poem_50 data/twitter_haiku.csv 0.462099935921 0.0414785738231
+29554glove_poem_50 data/basho-buson.txt 0.471318338451 0.0286724213519
+29660glove_poem_50 data/best_haikus.txt 0.441982297574 0.0319101491295
+30344glove_poem_50 data/hsa_haiku.txt 0.403745211804 0.032636076522
+30356glove_poem_50 data/mikhaemoji.txt 0.521882518265 0.0201539652286
+30388glove_poem_50 data/write_a_haiku.txt 0.557110420796 0.0396040655999
+2933glove_poem_pair_50 data/daily_haiku.csv 0.366421560863 0.0345296243507
+6204glove_poem_pair_50 data/haiku_foundation.csv 0.371539286246 0.0333513095595
+14651glove_poem_pair_50 data/herons_nest.csv 0.356135473392 0.0305830463057
+15005glove_poem_pair_50 data/modern_haiku.csv 0.307309204017 0.0345227660192
+20698glove_poem_pair_50 data/reddit_haiku.csv 0.439376080334 0.0374501120499
+25463glove_poem_pair_50 data/temps_libres.csv 0.379624748974 0.0329480872696
+29986glove_poem_pair_50 data/twitter_haiku.csv 0.411833690517 0.0434801501202
+30131glove_poem_pair_50 data/basho-buson.txt 0.422787827379 0.0321190666097
+30238glove_poem_pair_50 data/best_haikus.txt 0.395946713826 0.0322608477093
+30937glove_poem_pair_50 data/hsa_haiku.txt 0.350402873463 0.0355685568521
+30949glove_poem_pair_50 data/mikhaemoji.txt 0.485559093144 0.0246969997093
+30981glove_poem_pair_50 data/write_a_haiku.txt 0.524884340838 0.044657998178
