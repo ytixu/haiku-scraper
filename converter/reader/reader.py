@@ -1,5 +1,5 @@
 import csv
-import glob 
+import glob
 
 def read(filename):
 	with open('data/'+filename+'.csv', 'r') as csvfile:
@@ -11,6 +11,9 @@ def get_all_files():
 	files = glob.glob('data/*.csv')
 	files.extend(glob.glob('data/*.txt'))
 	return files
+
+def get_all_outputs():
+	return glob.glob('output/*.txt')
 
 def read_lines(filename):
 	with open(filename, 'r') as fileobj:

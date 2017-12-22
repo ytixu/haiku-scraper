@@ -6,7 +6,7 @@ from reader.reader import read_lines, get_all_files
 NAME = 'all_words'
 # CORPORA = ['wordnet', 'glove_twitter_25', 'glove_twitter_50',  'glove_twitter_100', 'glove_twitter_200',
 # 		'glove_wiki_50', 'glove_wiki_100', 'glove_wiki_200', 'glove_wiki_300', 'glove_crawl_300']
-CORPORA = ['wordnet', 'glove_twitter_25', 'glove_twitter_50', 'glove_wiki_50', 'glove_wiki_100']
+CORPORA = ['glove_poem_pair_50']
 
 def convert(corpus, data_file=None, get_stats=True):
 	if get_stats:

@@ -53,21 +53,6 @@ glove_poem_pair_50 data/write_a_haiku.txt 0.596324130905 0.0385583520554
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 3021glove_twitter_50 data/daily_haiku.csv 0.650905987569 0.0173693120435
 6440glove_twitter_50 data/haiku_foundation.csv 0.652335336852 0.0175712830641
 15147glove_twitter_50 data/herons_nest.csv 0.633242914499 0.0170030830494

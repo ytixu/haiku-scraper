@@ -1,7 +1,7 @@
 import sys
 import csv
 
-def scrape_and_save(converter_class):
+def convert_and_save(converter_class):
 	from utils.utils import flatten_and_encode
 	for corpus in converter_class.CORPORA:
 		print 'Converting', converter_class.NAME, 'with', corpus
@@ -43,8 +43,16 @@ def compute_association_for_gen(corpus):
 if __name__ == '__main__':
 	import all_word_pairs
 	import best_association_pairs
-	# scrape_and_save(all_word_pairs)
-	# scrape_and_save(best_association_pairs)
+	# FOR COVERTING
+	# UNCOMMENT ANY OF THOSE TWO
+	#
+	# 1) Get all the word-line pairs
+	# convert_and_save(all_word_pairs)
+	# 2) Get top 3 word-line pairs
+	# convert_and_save(best_association_pairs)
+	#
+	# FOR COMPUTING MEAN AND VARIANCE OF THE ASSOCIATION SCORE
 	corpus = ['glove_poem_50', 'glove_poem_pair_50', 'glove_haiku_50','glove_haiku_pair_50']
 	for c in corpus:
 		compute_association_for_gen(c)
+

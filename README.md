@@ -70,35 +70,29 @@ There are two way to compute
 
 In vector space, the two method are comparable, thus we can find best association score over the words in the lines.
 
-#### Embedded vector space
-`corpora/glove.haiku.50d.txt` is trained using GloVe on the scraped haikus.
+## To Run
 
-Paramters:
-- window size: 7
-- minimum word frequency: 5
-- vector dimension: 50
+`cd` to the root directory of this repo.
 
-Output space has 5764 vectors.
-
-#### All word pairs
-Find words present in a corpus as topic words and get all combination of word-line pairs (ignoring repeated words between lines). (150095 entries)
-
-#### Best association score pairs
-Find words present in embedded word vector space and get first n best combination of word-line pairs according to the association score. (92040 entires)
-
-Mean and variance of the association score
+To run scrappers, first uncomment the website that you want to scrap in scrapers\scraper.py and run
 ```
-glove_poem_pair_50 data/daily_haiku.csv 0.426720520313 0.0308187132536
-glove_poem_pair_50 data/haiku_foundation.csv 0.430753140632 0.0301892363038
-glove_poem_pair_50 data/herons_nest.csv 0.415355115674 0.027218049136
-glove_poem_pair_50 data/modern_haiku.csv 0.367671944758 0.0308155489674
-glove_poem_pair_50 data/reddit_haiku.csv 0.500054891507 0.0335015490394
-glove_poem_pair_50 data/temps_libres.csv 0.439545564794 0.0293613901322
-glove_poem_pair_50 data/twitter_haiku.csv 0.473346197345 0.0392785278992
-glove_poem_pair_50 data/basho-buson.txt 0.466559954747 0.0310958709744
-glove_poem_pair_50 data/best_haikus.txt 0.443525686815 0.0325005803886
-glove_poem_pair_50 data/hsa_haiku.txt 0.412536348356 0.032246705612
-glove_poem_pair_50 data/mikhaemoji.txt 0.563596556276 0.0187410765112
-glove_poem_pair_50 data/write_a_haiku.txt 0.596324130905 0.0385583520554
-
+python scrapers/scraper.py
 ```
+This will overwrite the files in `/data`
+
+To run converter (converting the scrapped haikus to word-line pairs), uncomment accordingly (see file converter/converter.py) and run,
+```
+python converter/converter.py
+```
+
+To run topic expansion, run
+```
+python converter/expand.py
+```
+
+
+### GloVe
+
+Download repo from here: https://github.com/stanfordnlp/GloVe
+
+In `/glove` there are files for converting scrapped haiku to lines and paired-lines. This is for training word embedding.

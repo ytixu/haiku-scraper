@@ -2,7 +2,7 @@ import sys
 import numpy as np
 
 from utils import corpora, utils, conversion_statistics, association
-from reader.reader import get_all_files
+from reader.reader import get_all_files, get_all_outputs
 from all_word_pairs import convert as awp_convert
 
 NAME = 'best_words'
@@ -14,14 +14,15 @@ CORPORA = [
 	# 'glove_wiki_50'
 	# 'glove_twitter_50',
 	# 'glove_wiki_100',
-		'glove_haiku_50', 'glove_haiku_pair_50', 'glove_poem_50'
-		# 'glove_poem_pair_50'
+		# 'glove_haiku_50', 'glove_haiku_pair_50', 'glove_poem_50'
+		'glove_poem_pair_50'
 		]
 
 def convert(corpus):
 	sr = conversion_statistics.record()
 
 	datafiles = get_all_files()
+	# datafiles = get_all_outputs()
 	for filename in datafiles:
 
 		for combo in awp_convert(corpus, filename, False):

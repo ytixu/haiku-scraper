@@ -38,5 +38,6 @@ if __name__ == '__main__':
 	# scrape_and_save(twitter_haiku)
 	# scrape_and_save(modern_haiku)
 	# scrape_and_save(haiku_foundation)
-	scrape_and_save(all_poetry_basho)
+	# scrape_and_save(all_poetry_basho)
+	pass
 
